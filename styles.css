@@ -66,17 +66,23 @@ a {
 
 #info-items:hover > .info-item:hover {
     opacity: 1;
+    animation: scaleEl 800ms linear;
 }
 
 #menu-background-pattern {
     height: 100vh;
     width: 100vw;
-    background-image: radial-gradient(
+    background-color: rgba(255, 255, 255, 0);
+    opacity: 0.1;
+    background-image:  linear-gradient(30deg, #b4b4b4 12%, transparent 12.5%, transparent 87%, #b4b4b4 87.5%, #b4b4b4), linear-gradient(150deg, #b4b4b4 12%, transparent 12.5%, transparent 87%, #b4b4b4 87.5%, #b4b4b4), linear-gradient(30deg, #b4b4b4 12%, transparent 12.5%, transparent 87%, #b4b4b4 87.5%, #b4b4b4), linear-gradient(150deg, #b4b4b4 12%, transparent 12.5%, transparent 87%, #b4b4b4 87.5%, #b4b4b4), linear-gradient(60deg, #b4b4b477 25%, transparent 25.5%, transparent 75%, #b4b4b477 75%, #b4b4b477), linear-gradient(60deg, #b4b4b477 25%, transparent 25.5%, transparent 75%, #b4b4b477 75%, #b4b4b477);
+    background-size: 80px 140px;
+    background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;
+    /* background-image: radial-gradient(
         rgba(2255, 255, 255, 0.1) 9%,
         transparent 9%
     );
     background-position: 0% 0%;
-    background-size: 12vmin 12vmin;
+    background-size: 12vmin 12vmin; */
     position: fixed;
     left: 0px;
     top: 0px;
@@ -87,11 +93,13 @@ a {
 }
 
 #info-items:hover ~ #menu-background-pattern {
-    background-size: 11vmin 11vmin;
-    opacity: 0.5;
+    /* background-size: 11vmin 11vmin;
+    opacity: 0.5; */
+    background-size: 86px 146px;
+    background-position: 0 0, 0 0, 43px 73px, 43px 73px, 0 0, 43px 73px;
 }
 
-#info[data-active-index="0"] > #menu-background-pattern {
+/* #info[data-active-index="0"] > #menu-background-pattern {
     background-position: 0% -25%; 
 }
 
@@ -117,7 +125,7 @@ a {
 
 #info[data-active-index="6"] > #menu-background-pattern {
     background-position: 0% -175%; 
-}
+} */
 
 .cursor {
     height: 24px;
@@ -155,5 +163,14 @@ a {
     }
     100% {
         opacity: 1;
+    }
+}
+
+@keyframes scaleEl {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.02);
     }
 }

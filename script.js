@@ -152,14 +152,21 @@ document.addEventListener("DOMContentLoaded", () => {
       sunIcon.classList.remove("block");
       moonIcon.classList.add("block");
       moonIcon.classList.remove("hidden");
+      // anime({
+      //   targets: backgroundPattern,
+      //   backgroundImage: `radial-gradient(
+      //     rgba(120, 120, 120, 0.1) 9%,
+      //     transparent 9%
+      //   )`,
+      //   easing: "easeInOutQuad",
+      //   duration: 800,
+      // });
       anime({
         targets: backgroundPattern,
-        backgroundImage: `radial-gradient(
-          rgba(120, 120, 120, 0.1) 9%,
-          transparent 9%
-        )`,
+        backgroundImage: `linear-gradient(30deg, #b4b4b4 12%, transparent 12.5%, transparent 87%, #b4b4b4 87.5%, #b4b4b4), linear-gradient(150deg, #b4b4b4 12%, transparent 12.5%, transparent 87%, #b4b4b4 87.5%, #b4b4b4), linear-gradient(30deg, #b4b4b4 12%, transparent 12.5%, transparent 87%, #b4b4b4 87.5%, #b4b4b4), linear-gradient(150deg, #b4b4b4 12%, transparent 12.5%, transparent 87%, #b4b4b4 87.5%, #b4b4b4), linear-gradient(60deg, #b4b4b477 25%, transparent 25.5%, transparent 75%, #b4b4b477 75%, #b4b4b477), linear-gradient(60deg, #b4b4b477 25%, transparent 25.5%, transparent 75%, #b4b4b477 75%, #b4b4b477)`,
+        opacity: 0.3,
         easing: "easeInOutQuad",
-        duration: 800,
+        duration: 200,
       });
       anime({
         targets: bodyTag,
@@ -211,13 +218,20 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       anime({
         targets: backgroundPattern,
-        backgroundImage: `radial-gradient(
-          rgba(2255, 255, 255, 0.1) 9%,
-          transparent 9%
-        )`,
+        backgroundImage: `linear-gradient(30deg, #b4b4b4 12%, transparent 12.5%, transparent 87%, #b4b4b4 87.5%, #b4b4b4), linear-gradient(150deg, #b4b4b4 12%, transparent 12.5%, transparent 87%, #b4b4b4 87.5%, #b4b4b4), linear-gradient(30deg, #b4b4b4 12%, transparent 12.5%, transparent 87%, #b4b4b4 87.5%, #b4b4b4), linear-gradient(150deg, #b4b4b4 12%, transparent 12.5%, transparent 87%, #b4b4b4 87.5%, #b4b4b4), linear-gradient(60deg, #b4b4b477 25%, transparent 25.5%, transparent 75%, #b4b4b477 75%, #b4b4b477), linear-gradient(60deg, #b4b4b477 25%, transparent 25.5%, transparent 75%, #b4b4b477 75%, #b4b4b477)`,
+        opacity: 0.1,
         easing: "easeInOutQuad",
-        duration: 800,
+        duration: 200,
       });
+      // anime({
+      //   targets: backgroundPattern,
+      //   backgroundImage: `radial-gradient(
+      //     rgba(2255, 255, 255, 0.1) 9%,
+      //     transparent 9%
+      //   )`,
+      //   easing: "easeInOutQuad",
+      //   duration: 800,
+      // });
       anime({
         targets: bodyTag,
         background: "#282a36",
