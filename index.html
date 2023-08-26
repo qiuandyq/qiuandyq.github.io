@@ -1,0 +1,445 @@
+<!-- reference: https://brittanychiang.com/ -->
+
+<!doctype html>
+<html id="html-tag" class="dark" data-theme="dracula">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="./script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              helvetica: ["Helvetica", "sans-serif"],
+            },
+          }
+        }
+      }
+    </script>
+  </head>
+  <body class="lg:overflow-hidden">
+    <div id="main">
+      <div class="hidden lg:block">
+        <div class="cursor"></div>
+        <div class="cursor"></div>
+        <div class="cursor"></div>
+        <div class="cursor"></div>
+        <div class="cursor"></div>
+        <div class="cursor"></div>
+        <div class="cursor"></div>
+        <div class="cursor"></div>
+        <div class="cursor"></div>
+        <div class="cursor"></div>
+      </div>
+      <div id="index-container" class="container mx-auto px-10">
+        <div class="grid grid-cols-1 gap-4 lg:h-screen lg:flex lg:flex-row">
+          <!-- left side -->
+          <div class="pt-10 lg:pt-20 lg:w-1/2" style="z-index: 3">
+            <!-- header -->
+            <!-- have the header fixed to the top of the page -->
+            <div class="pt-3 pl-1 pr-0 z-10 lg:pr-20 lg:sticky">
+              <h1 class="text-5xl lg:text-7xl font-semibold">
+                Andy Qiu
+              </h1>
+              <p class="pt-3 lg:pt-10">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+              </p>
+            </div>
+  
+            <div class="pt-5 z-10 lg:absolute lg:pt-10">
+              <img src="./assets/images/me.jpg" class="rounded-lg drop-shadow-md object-cover object-center h-96 w-auto">
+            </div>
+
+            <div id="icons" class="flex flex-row space-x-4 pt-5 lg:fixed lg:bottom-20 text-neutral-content">
+              <!-- icons -->
+                <div id="linkedin-icon">
+                  <a href="https://www.linkedin.com/in/qiuandyq/"><iconify-icon icon="mdi:linkedin" style="color: #969696;" width="45" height="45"></iconify-icon></a>
+                </div>
+                <div id="github-icon">
+                  <a href="https://github.com/qiuandyq"><iconify-icon icon="mdi:github" style="color: #969696;" width="45" height="45"></iconify-icon></a>
+                </div>
+                <div id="email-icon">
+                  <a href="mailto: qiuandyq@gmail.com"><iconify-icon icon="mdi:gmail" style="color: #969696;" width="45" height="45"></iconify-icon></a>
+                </div>
+                <div id="resume-icon">
+                  <a href="#"><iconify-icon icon="mdi:file-document-outline" style="color: #969696;" width="45" height="45"></iconify-icon></a>
+                </div>
+
+                <div id="moon-icon" class="hidden absolute top-14 right-10 lg:static">
+                  <iconify-icon icon="mdi:weather-night" style="color: #969696;" width="45" height="45"></iconify-icon>
+                </div>
+                <div id="sun-icon" class="block absolute top-14 right-10 lg:static">
+                  <iconify-icon icon="mdi:weather-sunny" style="color: #969696;" width="45" height="45"></iconify-icon>
+                </div>
+            </div>
+          </div>
+  
+          <!-- right side -->
+          <div class="lg:flex-1 lg:flex lg:overflow-hidden">
+            <div id="right-scrollable" class="lg:flex-1 lg:overflow-y-scroll lg:pt-20 no-scrollbar">
+  
+              <!-- about me -->
+              <div class="lg:pt-5">
+                <p class="lg:pl-5 lg:pr-5">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                </p>
+              </div>
+  
+              <div id="info" class="pt-5 pb-20 lg:pt-16">
+                <div id="info-items">
+                    <!-- career -->
+                    <h1 class="text-2xl font-medium lg:pl-5 lg:pr-5">
+                      Career
+                    </h1>
+                    <div class="lg:pl-5 lg:pr-5">
+                      <hr class="my-2 h-px border-t-0 bg-blue-500 bg-gradient-to-r from-transparent via-green-500 to-transparent opacity-25 dark:opacity-50" />
+                    </div>
+                    <!-- workday -->
+                    <a href="#workday" class="info-item hidden lg:block">
+                      <div class="card m-2.5">
+                        <div class="grid grid-cols-4 gap-0 p-3">
+                          <div class="row-span-4">
+                            <div class="flex-col text-xs pt-2 uppercase">
+                              <p>Sept - Apr 2023</p>
+                            </div>
+                            <div class="avatar pt-5 content-center pl-3">
+                              <div class="w-16 rounded-full drop-shadow-md">
+                                <img src="./assets/images/workday.jpg" class="object-cover object-center"/>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-span-3 text-lg font-medium"><h1>Workday</h1></div>
+                          <div class="col-span-3"><h2 style="color: #9ca3af">Software Development Engineer Intern</h2></div>
+                          <div class="col-span-3"><h2 style="color: #9ca3af">Victoria, BC</h2></div>
+                          <div class="col-span-3"><h3 style="color: #d1d5db">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</h3></div>
+                        </div>
+                      </div>
+                    </a>
+                    <div class="card visible lg:hidden">
+                      <div class="grid grid-cols-4 gap-0">
+                        <div class="row-span-4">
+                          <div class="flex-col text-xs pt-2 uppercase">
+                            <p>Sept - Apr 2023</p>
+                          </div>
+                          <div class="avatar pt-5 content-center">
+                            <div class="w-16 rounded-full drop-shadow-md">
+                              <img src="./assets/images/workday.jpg" class="object-cover object-center"/>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-span-3 text-lg font-medium"><h1>Workday</h1></div>
+                        <div class="col-span-3"><h2 style="color: #9ca3af">Software Development Engineer Intern</h2></div>
+                        <div class="col-span-3"><h2 style="color: #9ca3af">Victoria, BC</h2></div>
+                        <div class="col-span-3"><h3 style="color: #d1d5db">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</h3></div>
+                      </div>
+                    </div>
+      
+                    <!-- rbc -->
+                    <a href="#rbc" class="info-item hidden lg:block">
+                      <div class="card m-2.5">
+                        <div class="grid grid-cols-4 gap-0 p-3">
+                          <div class="row-span-4">
+                            <div class="flex-col text-xs pt-2 uppercase">
+                              <p>Jan - Apr 2022</p>
+                            </div>
+                            <div class="avatar pt-5 pl-3 content-center">
+                              <div class="w-16 rounded-full drop-shadow-md">
+                                <img src="./assets/images/rbc.jpg" class="object-cover object-center"/>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-span-3 text-lg font-medium"><h1>RBC</h1></div>
+                          <div class="col-span-3"><h2 style="color: #9ca3af">Software Developer Intern</h2></div>
+                          <div class="col-span-3"><h2 style="color: #9ca3af">Toronto, ON</h2></div>
+                          <div class="col-span-3"><h3 style="color: #d1d5db">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</h3></div>
+                        </div>
+                      </div>
+                    </a>
+                    <div class="card visible pt-5 lg:hidden">
+                      <div class="grid grid-cols-4 gap-0">
+                        <div class="row-span-4">
+                          <div class="flex-col text-xs pt-2 uppercase">
+                            <p>Jan - Apr 2022</p>
+                          </div>
+                          <div class="avatar pt-5 content-center">
+                            <div class="w-16 rounded-full drop-shadow-md">
+                              <img src="./assets/images/rbc.jpg" class="object-cover object-center"/>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-span-3 text-lg font-medium"><h1>RBC</h1></div>
+                        <div class="col-span-3"><h2 style="color: #9ca3af">Software Developer Intern</h2></div>
+                        <div class="col-span-3"><h2 style="color: #9ca3af">Toronto, ON</h2></div>
+                        <div class="col-span-3"><h3 style="color: #d1d5db">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</h3></div>
+                      </div>
+                    </div>
+      
+                    <!-- porton health -->
+                    <a href="#porton" class="info-item hidden lg:block">
+                      <div class="card m-2.5">
+                        <div class="grid grid-cols-4 gap-0 p-3">
+                          <div class="row-span-4">
+                            <div class="flex-col text-xs pt-2 uppercase">
+                              <p>Sept - Dec 2020</p>
+                            </div>
+                            <div class="avatar pt-5 pl-3 content-center">
+                              <div class="w-16 rounded-full drop-shadow-md">
+                                <img src="./assets/images/porton.jpg" class="object-cover object-center"/>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-span-3 text-lg font-medium"><h1>Porton Health</h1></div>
+                          <div class="col-span-3"><h2 style="color: #9ca3af">Full Stack Developer Intern</h2></div>
+                          <div class="col-span-3"><h2 style="color: #9ca3af">Vancouver, BC</h2></div>
+                          <div class="col-span-3"><h3 style="color: #d1d5db">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</h3></div>
+                        </div>
+                      </div>
+                    </a>
+                    <div class="card visible pt-5 lg:hidden">
+                      <div class="grid grid-cols-4 gap-0">
+                        <div class="row-span-4">
+                          <div class="flex-col text-xs pt-2 uppercase">
+                            <p>Sept - Dec 2020</p>
+                          </div>
+                          <div class="avatar pt-5 content-center">
+                            <div class="w-16 rounded-full drop-shadow-md">
+                              <img src="./assets/images/porton.jpg" class="object-cover object-center"/>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-span-3 text-lg font-medium"><h1>Porton Health</h1></div>
+                        <div class="col-span-3"><h2 style="color: #9ca3af">Full Stack Developer Intern</h2></div>
+                        <div class="col-span-3"><h2 style="color: #9ca3af">Vancouver, BC</h2></div>
+                        <div class="col-span-3"><h3 style="color: #d1d5db">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</h3></div>
+                      </div>
+                    </div>
+      
+                    <!-- assistlist -->
+                    <a href="#assistlist" class="info-item hidden lg:block">
+                      <div class="card m-2.5">
+                        <div class="grid grid-cols-4 gap-0 p-3">
+                          <div class="row-span-4">
+                            <div class="flex-col text-xs pt-2 uppercase">
+                              <p>Jun - Aug 2019</p>
+                            </div>
+                            <div class="avatar pt-5 pl-3 content-center">
+                              <div class="w-16 rounded-full drop-shadow-md">
+                                <img src="./assets/images/assistlist.jpg" class="object-cover object-center"/>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-span-3 text-lg font-medium"><h1>AssistList</h1></div>
+                          <div class="col-span-3"><h2 style="color: #9ca3af">Software Developer Intern</h2></div>
+                          <div class="col-span-3"><h2 style="color: #9ca3af">Vancouver, BC</h2></div>
+                          <div class="col-span-3"><h3 style="color: #d1d5db">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</h3></div>
+                        </div>
+                      </div>
+                    </a>
+                    <div class="card visible pt-5 lg:hidden">
+                      <div class="grid grid-cols-4 gap-0">
+                        <div class="row-span-4">
+                          <div class="flex-col text-xs pt-2 uppercase">
+                            <p>Jun - Aug 2019</p>
+                          </div>
+                          <div class="avatar pt-5 content-center">
+                            <div class="w-16 rounded-full drop-shadow-md">
+                              <img src="./assets/images/assistlist.jpg" class="object-cover object-center"/>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-span-3 text-lg font-medium"><h1>AssistList</h1></div>
+                        <div class="col-span-3"><h2 style="color: #9ca3af">Software Developer Intern</h2></div>
+                        <div class="col-span-3"><h2 style="color: #9ca3af">Vancouver, BC</h2></div>
+                        <div class="col-span-3"><h3 style="color: #d1d5db">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</h3></div>
+                      </div>
+                    </div>
+                    
+                    <!-- projects -->
+                    <h1 class="text-2xl font-medium pt-5 lg:pt-16 lg:pl-5 lg:pr-5">
+                      Projects
+                    </h1>
+                    <div class="lg:pl-5 lg:pr-5">
+                      <hr class="my-2 h-px border-t-0 bg-blue-500 bg-gradient-to-r from-transparent via-green-500 to-transparent opacity-25 dark:opacity-50" />
+                    </div>
+
+                    <!-- winniexnails -->
+                    <a href="#winniexnails" class="info-item hidden lg:block">
+                      <div class="card m-2.5">
+                        <div class="p-3">
+                          <h1 class="text-lg font-medium">
+                            winniexnails
+                          </h1>
+                          <h3 style="color: #d1d5db">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                          </h3>
+                        </div>
+                      </div>
+                    </a>
+                    <div class="card visible lg:hidden">
+                      <div>
+                        <h1 class="text-lg font-medium">
+                          winniexnails
+                        </h1>
+                        <h3 style="color: #d1d5db">
+                          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                        </h3>
+                      </div>
+                    </div>
+
+                    <!-- fresh potatoes -->
+                    <a href="#fresh_potatoes" class="info-item hidden lg:block">
+                      <div class="card m-2.5">
+                        <div class="p-3">
+                          <h1 class="text-lg font-medium">
+                            Fresh Potatotes
+                          </h1>
+                          <h3 style="color: #d1d5db">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                          </h3>
+                        </div>
+                      </div>
+                    </a>
+                    <div class="card visible pt-5 lg:hidden">
+                      <div>
+                        <h1 class="text-lg font-medium">
+                          Fresh Potatotes
+                        </h1>
+                        <h3 style="color: #d1d5db">
+                          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                        </h3>
+                      </div>
+                    </div>
+                    
+                    <!-- education -->
+                    <h1 class="text-2xl font-medium pt-5 lg:pt-16 lg:pl-5 lg:pr-5">
+                      Education
+                    </h1>
+                    <div class="lg:pl-5 lg:pr-5">
+                      <hr class="my-2 h-px border-t-0 bg-blue-500 bg-gradient-to-r from-transparent via-green-500 to-transparent opacity-25 dark:opacity-50" />
+                    </div>     
+
+                    <a href="https://www.sfu.ca/" class="info-item hidden lg:block">
+                      <div class="card m-2.5">
+                        <div class="grid grid-cols-1 gap-1.5 p-3">
+                          <h1 class="text-lg">
+                            Simon Fraser University
+                          </h1>
+                          <h3 class="text-sm">
+                            Bachlor of Science, Computing Science
+                          </h3>
+                          <h3 class="text-sm">
+                            Sept 2019 - Dec 2023
+                          </h3>
+                        </div>
+                      </div>
+                    </a>
+                    <div class="card visible lg:hidden">
+                      <div class="grid grid-cols-1 gap-1.5">
+                        <h1 class="text-lg">
+                          Simon Fraser University
+                        </h1>
+                        <h3 class="text-sm">
+                          Bachlor of Science, Computing Science
+                        </h3>
+                        <h3 class="text-sm">
+                          Sept 2019 - Dec 2023
+                        </h3>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div id="menu-background-pattern"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- workday modal -->
+        <div class="modal" id="workday">
+          <div class="modal-box">
+            <h3 class="font-bold text-lg">Hello!</h3>
+            <p class="py-4">This modal works with anchor links</p>
+            <div class="modal-action">
+             <a href="#" class="btn">Yay!</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- rbc modal -->
+        <div class="modal" id="rbc">
+          <div class="modal-box">
+            <h3 class="font-bold text-lg">Hello!</h3>
+            <p class="py-4">This modal works with anchor links</p>
+            <div class="modal-action">
+             <a href="#" class="btn">Yay!</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- porton modal -->
+        <div class="modal" id="porton">
+          <div class="modal-box">
+            <h3 class="font-bold text-lg">Hello!</h3>
+            <p class="py-4">This modal works with anchor links</p>
+            <div class="modal-action">
+             <a href="#" class="btn">Yay!</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- assistlist modal -->
+        <div class="modal" id="assistlist">
+          <div class="modal-box">
+            <h3 class="font-bold text-lg">Hello!</h3>
+            <p class="py-4">This modal works with anchor links</p>
+            <div class="modal-action">
+             <a href="#" class="btn">Yay!</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- winniexnails modal -->
+        <div class="modal" id="winniexnails">
+          <div class="modal-box max-w-5xl">
+            <div class="flex flex-row">
+              <div class="basis-1/2 m-2">
+                <img src="./assets/images/wxn.png" class="rounded-lg drop-shadow-md object-cover object-center h-84 w-auto">
+              </div>
+              <div class="basis-1/2 m-2">
+                <h3 class="font-bold text-lg">winniexnails</h3>
+                <p class="py-4">Lorem ipsum</p>
+                <div class="modal-action fixed bottom-7 right-7">
+                 <a href="#" class="btn">Close</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- fresh potatoes modal -->
+        <div class="modal" id="fresh_potatoes">
+          <div class="modal-box max-w-5xl">
+            <div class="flex flex-row">
+              <div class="basis-1/2 m-2">
+                <img src="./assets/images/fp.jpg" class="rounded-lg drop-shadow-md object-cover object-center h-84 w-auto">
+              </div>
+              <div class="basis-1/2 m-2">
+                <h3 class="font-bold text-lg">Fresh Potatoes</h3>
+                <p class="py-4">Lorem ipsum</p>
+                <div class="modal-action fixed bottom-7 right-7">
+                 <a href="#" class="btn">Close</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </body>
+</html>
