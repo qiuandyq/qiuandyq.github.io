@@ -1,15 +1,36 @@
 document.addEventListener("DOMContentLoaded", () => {
   const rightScrollable = document.getElementById("right-scrollable");
   const main = document.getElementById("main");
-  const themeButton = document.getElementById("theme-button");
   const linkedinIcon = document.getElementById("linkedin-icon");
   const githubIcon = document.getElementById("github-icon");
   const emailIcon = document.getElementById("email-icon");
   const resumeIcon = document.getElementById("resume-icon");
   const bodyTag = document.getElementsByTagName("body")[0];
-  const cardEl = document.querySelectorAll("a");
+  const info = document.getElementById("info");
+  const sunIcon = document.getElementById("sun-icon");
+  const moonIcon = document.getElementById("moon-icon");
 
-  themeButton.addEventListener("click", themeToggle);
+  const coords = { x: 0, y: 0 };
+  const colors = [
+    "#00ffea",
+    "#00f1f3",
+    "#00e2ff",
+    "#00d2ff",
+    "#00c2ff",
+    "#00b0ff",
+    "#009cff",
+    "#0087ff",
+    "#006eff",
+    "#004dff",
+    "#0c08ff",
+  ];
+  const cursor = document.querySelectorAll(".cursor");
+  cursor.forEach((el, index) => {
+    el.x = 0;
+    el.y = 0;
+    el.style.backgroundColor = colors[index % colors.length];
+  });
+
   rightScrollable.addEventListener("wheel", (e) => e.preventDefault());
   main.addEventListener("wheel", (e) => scrollSpeed(e));
   linkedinIcon.addEventListener("mouseenter", (e) => enterIcon(e));
@@ -20,6 +41,47 @@ document.addEventListener("DOMContentLoaded", () => {
   emailIcon.addEventListener("mouseleave", (e) => leaveIcon(e));
   resumeIcon.addEventListener("mouseenter", (e) => enterIcon(e));
   resumeIcon.addEventListener("mouseleave", (e) => leaveIcon(e));
+  sunIcon.addEventListener("mouseenter", (e) => enterIcon(e));
+  sunIcon.addEventListener("mouseleave", (e) => leaveIcon(e));
+  sunIcon.addEventListener("click", (e) => themeToggle(e));
+  moonIcon.addEventListener("mouseenter", (e) => enterIcon(e));
+  moonIcon.addEventListener("mouseleave", (e) => leaveIcon(e));
+  moonIcon.addEventListener("click", (e) => themeToggle(e));
+  window.addEventListener("mousemove", (e) => {
+    coords.x = e.clientX;
+    coords.y = e.clientY;
+  });
+
+  Array.from(document.getElementsByClassName("info-item")).forEach(
+    (item, index) => {
+      item.onmouseover = () => {
+        info.dataset.activeIndex = index;
+      };
+    }
+  );
+
+  function animateCursor() {
+    let x = coords.x;
+    let y = coords.y;
+
+    cursor.forEach((el, index) => {
+      el.style.left = x - 12 + "px";
+      el.style.top = y - 12 + "px";
+
+      el.style.scale = (cursor.length - index) / 10;
+
+      el.x = x;
+      el.y = y;
+
+      const nextCursor = cursor[index + 1] || cursor[0];
+      x += (nextCursor.x - el.x) * 0.5;
+      y += (nextCursor.y - el.y) * 0.5;
+    });
+
+    requestAnimationFrame(animateCursor);
+  }
+
+  animateCursor();
 
   function enterIcon(el) {
     anime.remove(el.target);
@@ -80,13 +142,28 @@ document.addEventListener("DOMContentLoaded", () => {
     const h2 = document.getElementsByTagName("h2");
     const h3 = document.getElementsByTagName("h3");
     const p = document.getElementsByTagName("p");
+    const backgroundPattern = document.getElementById(
+      "menu-background-pattern"
+    );
 
     if (theme === "dracula") {
       document.documentElement.setAttribute("data-theme", "garden");
-      themeButton.innerHTML = "Dark";
+      sunIcon.classList.add("hidden");
+      sunIcon.classList.remove("block");
+      moonIcon.classList.add("block");
+      moonIcon.classList.remove("hidden");
+      anime({
+        targets: backgroundPattern,
+        backgroundImage: `radial-gradient(
+          rgba(120, 120, 120, 0.1) 9%,
+          transparent 9%
+        )`,
+        easing: "easeInOutQuad",
+        duration: 800,
+      });
       anime({
         targets: bodyTag,
-        background: "#ffffff",
+        background: `#ffffff`,
         easing: "easeInOutQuad",
         duration: 800,
       });
@@ -122,13 +199,25 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     } else {
       document.documentElement.setAttribute("data-theme", "dracula");
-      themeButton.innerHTML = "Light";
+      sunIcon.classList.add("block");
+      sunIcon.classList.remove("hidden");
+      moonIcon.classList.add("hidden");
+      moonIcon.classList.remove("block");
       var bgGray300Els = document.getElementsByClassName("hover:bg-gray-300"),
         i = bgGray300Els.length;
       while (i--) {
         bgGray300Els[i].classList.add("hover:bg-gray-700");
         bgGray300Els[i].classList.remove("hover:bg-gray-300");
       }
+      anime({
+        targets: backgroundPattern,
+        backgroundImage: `radial-gradient(
+          rgba(2255, 255, 255, 0.1) 9%,
+          transparent 9%
+        )`,
+        easing: "easeInOutQuad",
+        duration: 800,
+      });
       anime({
         targets: bodyTag,
         background: "#282a36",
@@ -170,32 +259,6 @@ document.addEventListener("DOMContentLoaded", () => {
       duration: duration,
       elasticity: elasticity,
     });
-  }
-
-  function enterCard(el) {
-    animateCard(el, 1.0275, 800, 400);
-  }
-
-  function leaveCard(el) {
-    animateCard(el, 1.0, 600, 300);
-  }
-
-  for (var i = 0; i < cardEl.length; i++) {
-    cardEl[i].addEventListener(
-      "mouseenter",
-      function (e) {
-        enterCard(e.target);
-      },
-      false
-    );
-
-    cardEl[i].addEventListener(
-      "mouseleave",
-      function (e) {
-        leaveCard(e.target);
-      },
-      false
-    );
   }
 
   function getRandomIntInclusive(min, max) {

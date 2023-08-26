@@ -39,44 +39,116 @@ body {
     }
 }
 
-/* .career-item {
+#icons {
+    z-index: 2;
+}
+
+.info-item {
     width: 100%;
     height: 100%;
     border-radius: 20px;
-    transition: 0.5s;
+    transition: opacity 800ms ease;
 }
 
-#career-items:hover > .career-item {
+#info-items {
+    position: relative;
+    z-index: 2;
+}
+
+#info-items:hover > .info-item {
     opacity: 0.3;
 }
 
-#career-items:hover > .career-item:hover {
+#info-items:hover > .info-item:hover {
     opacity: 1;
-}
-
-#career-items {
-    position: relative;
-    z-index: 1;
 }
 
 #menu-background-pattern {
     height: 100vh;
     width: 100vw;
     background-image: radial-gradient(
-        rgba(255, 255, 255, 0.1) 9%,
+        rgba(2255, 255, 255, 0.1) 9%,
         transparent 9%
     );
     background-position: 0% 0%;
     background-size: 12vmin 12vmin;
-    position: absolute;
+    position: fixed;
     left: 0px;
     top: 0px;
     z-index: 1;
     transition: opacity 800ms ease,
-        background-size 800ms ease;
+        background-size 800ms ease,
+        background-position 800ms ease;
 }
 
-#career-items:hover ~ #menu-background-pattern {
+#info-items:hover ~ #menu-background-pattern {
     background-size: 11vmin 11vmin;
     opacity: 0.5;
-} */
+}
+
+#info[data-active-index="0"] > #menu-background-pattern {
+    background-position: 0% -25%; 
+}
+
+#info[data-active-index="1"] > #menu-background-pattern {
+    background-position: 0% -50%; 
+}
+
+#info[data-active-index="2"] > #menu-background-pattern {
+    background-position: 0% -75%; 
+}
+
+#info[data-active-index="3"] > #menu-background-pattern {
+    background-position: 0% -100%; 
+}
+
+#info[data-active-index="4"] > #menu-background-pattern {
+    background-position: 0% -125%; 
+}
+
+#info[data-active-index="5"] > #menu-background-pattern {
+    background-position: 0% -150%; 
+}
+
+#info[data-active-index="6"] > #menu-background-pattern {
+    background-position: 0% -175%; 
+}
+
+.cursor {
+    height: 24px;
+    width: 24px;
+    border-radius: 24px;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.1;
+}
+
+#sun-icon {
+    animation: fade1 800ms linear;
+    transition: opacity 800ms ease;
+}
+
+#moon-icon {
+    animation: fade2 800ms linear;
+    transition: opacity 800ms ease;
+}
+
+@keyframes fade1 {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+  
+  @keyframes fade2 {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

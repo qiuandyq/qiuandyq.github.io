@@ -24,13 +24,25 @@
   </head>
   <body class="lg:overflow-hidden">
     <div id="main">
+      <div class="hidden lg:block">
+        <div class="cursor"></div>
+        <div class="cursor"></div>
+        <div class="cursor"></div>
+        <div class="cursor"></div>
+        <div class="cursor"></div>
+        <div class="cursor"></div>
+        <div class="cursor"></div>
+        <div class="cursor"></div>
+        <div class="cursor"></div>
+        <div class="cursor"></div>
+      </div>
       <div id="index-container" class="container mx-auto px-10">
         <div class="grid grid-cols-1 gap-4 lg:h-screen lg:flex lg:flex-row">
           <!-- left side -->
-          <div class="pt-10 lg:pt-20 lg:w-1/2">
+          <div class="pt-10 lg:pt-20 lg:w-1/2" style="z-index: 3">
             <!-- header -->
             <!-- have the header fixed to the top of the page -->
-            <div class=" pt-3 pl-1 pr-0 z-10 lg:pr-20 lg:sticky">
+            <div class="pt-3 pl-1 pr-0 z-10 lg:pr-20 lg:sticky">
               <h1 class="text-5xl lg:text-7xl font-semibold">
                 Andy Qiu
               </h1>
@@ -43,18 +55,20 @@
               <img src="../images/me.jpg" class="rounded-lg drop-shadow-md object-cover object-center h-96 w-auto">
             </div>
 
-            <div class="pt-5 lg:absolute lg:bottom-20 text-neutral-content">
+            <div id="icons" class="pt-5 lg:absolute lg:bottom-20 text-neutral-content">
               <!-- icons -->
               <ul class="flex flex-row">
-                <a href="https://www.linkedin.com/in/qiuandyq/"><li id="linkedin-icon" class="pr-2"><iconify-icon icon="mdi:linkedin" style="color: #969696;" width="50" height="50"></iconify-icon></li></a>
-                <a href="https://github.com/qiuandyq"><li id="github-icon" class="pr-2"><iconify-icon icon="mdi:github" style="color: #969696;" width="50" height="50"></iconify-icon></li></a>
-                <a href="mailto: qiuandyq@gmail.com"><li id="email-icon" class="pr-2"><iconify-icon icon="mdi:email" style="color: #969696;" width="50" height="50"></iconify-icon></li></a>
-                <a href="#"><li id="resume-icon" class="pr-2"><iconify-icon icon="fe:document" style="color: #969696;" width="50" height="50"></iconify-icon></li></a>
-                <li><button id="theme-button" class="absolute top-14 right-10 lg:static btn btn-md rounded-2xl" style="background-color: #969696">Light</button></li>
-                <!-- <div>
-                  <a href="#"><li id="moon-icon" class="pr-2"><iconify-icon icon="ph:moon" style="color: #969696;" width="50" height="50"></iconify-icon></li></a>
-                  <a href="#"><li id="sun-icon" class="pr-2"><iconify-icon icon="ph:sun" style="color: #969696;" width="50" height="50"></iconify-icon></li></a>
-                </div> -->
+                <a href="https://www.linkedin.com/in/qiuandyq/"><li id="linkedin-icon" class=" zpr-2"><iconify-icon icon="mdi:linkedin" style="color: #969696;" width="45" height="45"></iconify-icon></li></a>
+                <a href="https://github.com/qiuandyq"><li id="github-icon" class="pr-2"><iconify-icon icon="mdi:github" style="color: #969696;" width="45" height="45"></iconify-icon></li></a>
+                <a href="mailto: qiuandyq@gmail.com"><li id="email-icon" class="pr-2"><iconify-icon icon="mdi:email" style="color: #969696;" width="45" height="45"></iconify-icon></li></a>
+                <a href="#"><li id="resume-icon"><iconify-icon icon="fe:document" style="color: #969696;" width="45" height="45"></iconify-icon></li></a>
+                <!-- <li><button id="theme-button" class="absolute top-14 right-10 lg:static btn btn-md rounded-2xl" style="background-color: #969696">Light</button></li> -->
+                <div id="moon-icon" class="hidden absolute top-14 right-10 lg:static">
+                  <a href="#"><li class="pr-2"><iconify-icon icon="ph:moon" style="color: #969696;" width="45" height="45"></iconify-icon></li></a>
+                </div>
+                <div id="sun-icon" class="block absolute top-14 right-10 lg:static">
+                  <a href="#"><li class="pr-2"><iconify-icon icon="ph:sun" style="color: #969696;" width="45" height="45"></iconify-icon></li></a>
+                </div>
               </ul>
             </div>
           </div>
@@ -70,19 +84,18 @@
                 </p>
               </div>
   
-              <!-- career -->
-              <div class="pt-5 lg:pt-28">
-                <h1 class="text-2xl font-medium lg:pl-5 lg:pr-5">
-                  Career
-                </h1>
-                <div class="lg:pl-5 lg:pr-5">
-                  <hr class="my-2 h-px border-t-0 bg-blue-500 bg-gradient-to-r from-transparent via-green-500 to-transparent opacity-25 dark:opacity-50" />
-                </div>
-                <div id="career-items">
-      
-                  <!-- workday -->
-                    <a href="#workday" class="career-item hidden lg:block">
-                      <div class="card hover:bg-gray-700 m-2.5">
+              <div id="info" class="pt-5 pb-20 lg:pt-16">
+                <div id="info-items">
+                    <!-- career -->
+                    <h1 class="text-2xl font-medium lg:pl-5 lg:pr-5">
+                      Career
+                    </h1>
+                    <div class="lg:pl-5 lg:pr-5">
+                      <hr class="my-2 h-px border-t-0 bg-blue-500 bg-gradient-to-r from-transparent via-green-500 to-transparent opacity-25 dark:opacity-50" />
+                    </div>
+                    <!-- workday -->
+                    <a href="#workday" class="info-item hidden lg:block">
+                      <div class="card m-2.5">
                         <div class="grid grid-cols-4 gap-0 p-3">
                           <div class="row-span-4">
                             <div class="flex-col text-xs pt-2 uppercase">
@@ -120,9 +133,9 @@
                       </div>
                     </div>
       
-                  <!-- rbc -->
-                    <a href="#rbc" class="career-item hidden lg:block">
-                      <div class="card hover:bg-gray-700 m-2.5">
+                    <!-- rbc -->
+                    <a href="#rbc" class="info-item hidden lg:block">
+                      <div class="card m-2.5">
                         <div class="grid grid-cols-4 gap-0 p-3">
                           <div class="row-span-4">
                             <div class="flex-col text-xs pt-2 uppercase">
@@ -160,9 +173,9 @@
                       </div>
                     </div>
       
-                  <!-- porton health -->
-                    <a href="#porton" class="career-item hidden lg:block">
-                      <div class="card hover:bg-gray-700 m-2.5">
+                    <!-- porton health -->
+                    <a href="#porton" class="info-item hidden lg:block">
+                      <div class="card m-2.5">
                         <div class="grid grid-cols-4 gap-0 p-3">
                           <div class="row-span-4">
                             <div class="flex-col text-xs pt-2 uppercase">
@@ -200,9 +213,9 @@
                       </div>
                     </div>
       
-                  <!-- assistlist -->
-                    <a href="#assistlist" class="career-item hidden lg:block">
-                      <div class="card hover:bg-gray-700 m-2.5">
+                    <!-- assistlist -->
+                    <a href="#assistlist" class="info-item hidden lg:block">
+                      <div class="card m-2.5">
                         <div class="grid grid-cols-4 gap-0 p-3">
                           <div class="row-span-4">
                             <div class="flex-col text-xs pt-2 uppercase">
@@ -239,24 +252,18 @@
                         <div class="col-span-3"><h3 style="color: #d1d5db">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</h3></div>
                       </div>
                     </div>
-  
-      
-                  </div>
-              </div>
-      
-              <!-- projects -->
-              <div class="pt-5 lg:pt-28">
-                <h1 class="text-2xl font-medium lg:pl-5 lg:pr-5">
-                  Projects
-                </h1>
-                <div class="lg:pl-5 lg:pr-5">
-                  <hr class="my-2 h-px border-t-0 bg-blue-500 bg-gradient-to-r from-transparent via-green-500 to-transparent opacity-25 dark:opacity-50" />
-                </div>
-                <ul>
-                  <!-- winniexnails -->
-                  <li>
-                    <a href="#winniexnails" class="hidden lg:block">
-                      <div class="card hover:bg-gray-700 m-2.5">
+                    
+                    <!-- projects -->
+                    <h1 class="text-2xl font-medium pt-5 lg:pt-16 lg:pl-5 lg:pr-5">
+                      Projects
+                    </h1>
+                    <div class="lg:pl-5 lg:pr-5">
+                      <hr class="my-2 h-px border-t-0 bg-blue-500 bg-gradient-to-r from-transparent via-green-500 to-transparent opacity-25 dark:opacity-50" />
+                    </div>
+
+                    <!-- winniexnails -->
+                    <a href="#winniexnails" class="info-item hidden lg:block">
+                      <div class="card m-2.5">
                         <div class="p-3">
                           <h1 class="text-lg font-medium">
                             winniexnails
@@ -277,12 +284,10 @@
                         </h3>
                       </div>
                     </div>
-                  </li>
-      
-                  <!-- fresh potatoes -->
-                  <li class="pt-10">
-                    <a href="#fresh_potatoes" class="hidden lg:block">
-                      <div class="card hover:bg-gray-700 m-2.5">
+
+                    <!-- fresh potatoes -->
+                    <a href="#fresh_potatoes" class="info-item hidden lg:block">
+                      <div class="card m-2.5">
                         <div class="p-3">
                           <h1 class="text-lg font-medium">
                             Fresh Potatotes
@@ -303,48 +308,47 @@
                         </h3>
                       </div>
                     </div>
-                  </li>
-                </ul>
-              </div>
-  
-              <!-- education -->
-              <div class="pt-5 pb-20 lg:pt-28">
-                <h1 class="text-2xl font-medium lg:pl-5 lg:pr-5">
-                  Education
-                </h1>
-                <div class="lg:pl-5 lg:pr-5">
-                  <hr class="my-2 h-px border-t-0 bg-blue-500 bg-gradient-to-r from-transparent via-green-500 to-transparent opacity-25 dark:opacity-50" />
-                </div>              
-                <a href="https://www.sfu.ca/" class="hidden lg:block">
-                  <div class="card hover:bg-gray-700 m-2.5">
-                    <div class="grid grid-cols-1 gap-1.5 p-3">
-                      <h1 class="text-lg">
-                        Simon Fraser University
-                      </h1>
-                      <h3 class="text-sm">
-                        Bachlor of Science, Computing Science
-                      </h3>
-                      <h3 class="text-sm">
-                        Sept 2019 - Dec 2023
-                      </h3>
-                    </div>
-                  </div>
-                </a>
-                <div class="card visible lg:hidden">
-                  <div class="grid grid-cols-1 gap-1.5">
-                    <h1 class="text-lg">
-                      Simon Fraser University
+                    
+                    <!-- education -->
+                    <h1 class="text-2xl font-medium pt-5 lg:pt-16 lg:pl-5 lg:pr-5">
+                      Education
                     </h1>
-                    <h3 class="text-sm">
-                      Bachlor of Science, Computing Science
-                    </h3>
-                    <h3 class="text-sm">
-                      Sept 2019 - Dec 2023
-                    </h3>
+                    <div class="lg:pl-5 lg:pr-5">
+                      <hr class="my-2 h-px border-t-0 bg-blue-500 bg-gradient-to-r from-transparent via-green-500 to-transparent opacity-25 dark:opacity-50" />
+                    </div>     
+
+                    <a href="https://www.sfu.ca/" class="info-item hidden lg:block">
+                      <div class="card m-2.5">
+                        <div class="grid grid-cols-1 gap-1.5 p-3">
+                          <h1 class="text-lg">
+                            Simon Fraser University
+                          </h1>
+                          <h3 class="text-sm">
+                            Bachlor of Science, Computing Science
+                          </h3>
+                          <h3 class="text-sm">
+                            Sept 2019 - Dec 2023
+                          </h3>
+                        </div>
+                      </div>
+                    </a>
+                    <div class="card visible lg:hidden">
+                      <div class="grid grid-cols-1 gap-1.5">
+                        <h1 class="text-lg">
+                          Simon Fraser University
+                        </h1>
+                        <h3 class="text-sm">
+                          Bachlor of Science, Computing Science
+                        </h3>
+                        <h3 class="text-sm">
+                          Sept 2019 - Dec 2023
+                        </h3>
+                      </div>
+                    </div>
+
                   </div>
-                </div>
+                  <div id="menu-background-pattern"></div>
               </div>
-  
             </div>
           </div>
         </div>
@@ -431,6 +435,5 @@
 
       </div>
     </div>
-    <div id="menu-background-pattern"></div>
   </body>
 </html>
