@@ -95,8 +95,8 @@ a {
 #info-items:hover ~ #menu-background-pattern {
     /* background-size: 11vmin 11vmin;
     opacity: 0.5; */
-    background-size: 86px 146px;
-    background-position: 0 0, 0 0, 43px 73px, 43px 73px, 0 0, 43px 73px;
+    background-size: 82px 142px;
+    background-position: 0 0, 0 0, 41px 71px, 41px 71px, 0 0, 41px 71px;
 }
 
 /* #info[data-active-index="0"] > #menu-background-pattern {
