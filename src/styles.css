@@ -14,6 +14,10 @@ body {
     cursor: none;
 }
 
+a {
+    cursor: none;
+}
+
 .circle {
     position:absolute;
     top:0;
@@ -129,13 +133,11 @@ body {
 #sun-icon {
     animation: fade1 800ms linear;
     transition: opacity 800ms ease;
-    cursor: pointer;
 }
 
 #moon-icon {
     animation: fade2 800ms linear;
     transition: opacity 800ms ease;
-    cursor: pointer;
 }
 
 @keyframes fade1 {
