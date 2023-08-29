@@ -11,11 +11,7 @@
 
 body {
     background-color: #282A36;
-    cursor: none;
-}
-
-a {
-    cursor: none;
+    font-family: 'Helvetica', sans-serif;
 }
 
 .circle {
@@ -24,6 +20,18 @@ a {
     animation:animate 5s linear forwards;
     border-radius: 20px;
     width: 150%;
+}
+
+.bubble {
+	background-color: #888888;
+    color: #d0e8ff;
+    padding: 3px;
+    padding-right: 10px;
+    padding-left: 10px;
+    display: inline-block;
+    border-radius: 15px;
+    font-family:'Arial', sans-serif;
+    margin-bottom: 5px;
 }
 
 @keyframes animate {
@@ -52,12 +60,16 @@ a {
     width: 100%;
     height: 100%;
     border-radius: 20px;
-    transition: opacity 800ms ease;
+    transition: all 200ms ease;
 }
 
 #info-items {
     position: relative;
     z-index: 2;
+}
+
+.info-item:hover {
+    transform: scale(1.02);
 }
 
 #info-items:hover > .info-item {
@@ -66,7 +78,6 @@ a {
 
 #info-items:hover > .info-item:hover {
     opacity: 1;
-    animation: scaleEl 800ms linear;
 }
 
 #menu-background-pattern {
@@ -141,11 +152,13 @@ a {
 #sun-icon {
     animation: fade1 800ms linear;
     transition: opacity 800ms ease;
+    cursor: pointer;
 }
 
 #moon-icon {
     animation: fade2 800ms linear;
     transition: opacity 800ms ease;
+    cursor: pointer;
 }
 
 @keyframes fade1 {
@@ -166,11 +179,11 @@ a {
     }
 }
 
-@keyframes scaleEl {
+/* @keyframes scaleEl {
     0% {
         transform: scale(1);
     }
     100% {
         transform: scale(1.02);
     }
-}
+} */

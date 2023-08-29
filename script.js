@@ -145,6 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const backgroundPattern = document.getElementById(
       "menu-background-pattern"
     );
+    const bubbles = document.getElementsByClassName("bubble");
 
     if (theme === "dracula") {
       document.documentElement.setAttribute("data-theme", "garden");
@@ -164,9 +165,22 @@ document.addEventListener("DOMContentLoaded", () => {
       anime({
         targets: backgroundPattern,
         backgroundImage: `linear-gradient(30deg, #b4b4b4 12%, transparent 12.5%, transparent 87%, #b4b4b4 87.5%, #b4b4b4), linear-gradient(150deg, #b4b4b4 12%, transparent 12.5%, transparent 87%, #b4b4b4 87.5%, #b4b4b4), linear-gradient(30deg, #b4b4b4 12%, transparent 12.5%, transparent 87%, #b4b4b4 87.5%, #b4b4b4), linear-gradient(150deg, #b4b4b4 12%, transparent 12.5%, transparent 87%, #b4b4b4 87.5%, #b4b4b4), linear-gradient(60deg, #b4b4b477 25%, transparent 25.5%, transparent 75%, #b4b4b477 75%, #b4b4b477), linear-gradient(60deg, #b4b4b477 25%, transparent 25.5%, transparent 75%, #b4b4b477 75%, #b4b4b477)`,
-        opacity: 0.3,
+        opacity: 0.15,
         easing: "easeInOutQuad",
         duration: 200,
+      });
+      anime({
+        targets: bodyTag,
+        background: `#ffffff`,
+        easing: "easeInOutQuad",
+        duration: 800,
+      });
+      anime({
+        targets: bubbles,
+        backgroundColor: `#D3D3D3`,
+        color: `#5582F1`,
+        easing: "easeInOutQuad",
+        duration: 800,
       });
       anime({
         targets: bodyTag,
@@ -235,6 +249,13 @@ document.addEventListener("DOMContentLoaded", () => {
       anime({
         targets: bodyTag,
         background: "#282a36",
+        easing: "easeInOutQuad",
+        duration: 800,
+      });
+      anime({
+        targets: bubbles,
+        backgroundColor: `#888888`,
+        color: `#d0e8ff`,
         easing: "easeInOutQuad",
         duration: 800,
       });
